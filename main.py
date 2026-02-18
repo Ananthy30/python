@@ -2,9 +2,11 @@ from fastapi import FastAPI
 from typing import Union
 from pydantic import BaseModel 
 from exer import router
+from real import realRouter
 
 app = FastAPI()
 app.include_router(router)
+app.include_router(realRouter)
 
 class Item(BaseModel):
     name: str
